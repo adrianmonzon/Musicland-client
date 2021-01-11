@@ -1,0 +1,19 @@
+.login {
+    background-image: url("./login-bg.jpeg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    color: white;
+    padding-top: 30px;
+
+}
+
+.login-hr {
+    border: 1px groove white;
+    width: 50%;
+    margin: 0;
+    margin-bottom: 15px;
+
+}
+

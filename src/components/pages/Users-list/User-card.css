@@ -1,0 +1,9 @@
+.user-card {
+    margin-bottom: 30px;
+    color: black;
+}
+
+.user-card img {
+    height: 250px;
+    object-fit: cover;
+}   

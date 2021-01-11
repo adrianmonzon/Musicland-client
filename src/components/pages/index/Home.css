@@ -1,0 +1,23 @@
+.home-img {
+   height: 100vh;
+   object-fit: cover;
+}
+
+.home-button {
+   margin-bottom: 25px;
+}
+
+.carousel-caption-a {
+    top: 0;
+    bottom: auto;
+    color: white;
+}
+
+.home-h5 {
+   margin-top: -30px;
+}
+
+.home-title {
+   width: 100%;
+   font-size: 500%;
+} 

@@ -1,0 +1,12 @@
+.nav-dropdown:hover {
+    background-color: #e2e6ea !important;
+}
+
+.nav-menu {
+    background-color: #202427;
+    color: white;
+}
+
+.nav-item {
+    text-decoration: none;
+}
