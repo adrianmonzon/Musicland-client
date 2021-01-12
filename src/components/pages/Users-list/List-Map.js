@@ -18,7 +18,7 @@ class ListMap extends Component {
         return (
             <div style={{ height: '650px', width: '100%' }}>
                 <GoogleMapReact
-                    bootstrapURLKeys={{ key: 'API' }}
+                    bootstrapURLKeys={{ key: process.env.REACT_APP_API_KEY }}
                     defaultCenter={this.props.center}
                     defaultZoom={this.props.zoom}
                 >

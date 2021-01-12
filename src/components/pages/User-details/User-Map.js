@@ -15,7 +15,7 @@ class UserMap extends Component {
         return (
             <div style={{ height: '400px', width: '100%' }}>
                 <GoogleMapReact
-                    bootstrapURLKeys={{ key: 'API' }}
+                    bootstrapURLKeys={{ key: process.env.REACT_APP_API_KEY}}
                     defaultCenter={{
                         lat: this.props.user.location.coordinates[0],
                         lng: this.props.user.location.coordinates[1]
