@@ -25,7 +25,8 @@ class UsersList extends Component {
   getAllUsers = () => {
     this.usersService
       .getUsers()
-      .then((res) => this.setState({ users: res.data }))
+      .then((res) => this.setState({ users: res.data })
+      )
       .catch((err) => console.log(err));
   }
 
@@ -44,12 +45,12 @@ class UsersList extends Component {
       <section className="users-list">
         <Container className="list-container">
           <Row>
-            <Col md={{ span: 6, offset: 3 }} className="list-top">
+            <Col md={{ span: 6, offset: 4 }} className="list-top">
               <Filter filterUsers={this.filterByInstrument} />
             </Col>
           </Row>
           {
-            this.state.users 
+            this.state.users.length > 0
               ?
               <Row>
                 {this.state.users.map((elm) => <UserCard key={elm._id} {...elm} loggedUser={this.props.loggedUser} />)}

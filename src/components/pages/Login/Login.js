@@ -3,6 +3,7 @@ import AuthService from '../../../service/auth.service'
 import './Login.css'
 
 import { Container, Row, Col, Form, Button } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
 
 class Login extends Component {
 
@@ -50,8 +51,9 @@ class Login extends Component {
                                 <Form.Label>Contraseña</Form.Label>
                                 <Form.Control type="password" name="password" value={this.state.password} onChange={this.handleInputChange} />
                             </Form.Group>
-                            <Button variant="light" type="submit">Iniciar sesión</Button>
+                            <Button className="loginButton" variant="light" type="submit">Iniciar sesión</Button>
                         </Form>
+                            <small>¿No registrad@? Hazlo <Link to="/registro" className="loginLink">aquí</Link></small>
                     </Col>
                 </Row>
             </Container>

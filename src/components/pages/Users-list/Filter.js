@@ -18,6 +18,7 @@ const Filter = (props) => {
         <option value="Guitarra eléctrica">Guitarra eléctrica</option>
         <option value="Guitarra española">Guitarra española</option>
         <option value="Batería">Batería</option>
+        <option value="Cajón flamenco">Cajón flamenco</option>
         <option value="Bajo">Bajo</option>
         <option value="Piano">Piano</option>
         <option value="Voz">Voz</option>
@@ -29,10 +30,12 @@ const Filter = (props) => {
         <option value="Gaita">Gaita</option>
         <option value="Violín">Violín</option>
         <option value="Clarinete">Clarinete</option>
+        <option value="Flauta travesera">Flauta travesera</option>
         <option value="Violonchelo">Violonchelo</option>
         <option value="Contrabajo">Contrabajo</option>
         <option value="Fagot">Fagot</option>
         <option value="Ukelele">Ukelele</option>
+        <option value="Otros">Otros</option>
       </Form.Control>
     </Form>
   );

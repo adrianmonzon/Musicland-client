@@ -17,3 +17,14 @@
 
 }
 
+.loginLink {
+    color: snow;
+}
+
+.loginLink:hover {
+    color: snow;
+}
+
+.loginButton {
+    margin-bottom: 10px;
+}

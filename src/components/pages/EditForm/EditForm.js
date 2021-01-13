@@ -98,6 +98,7 @@ class EditForm extends Component {
                     <option>Guitarra eléctrica</option>
                     <option>Guitarra española</option>
                     <option>Batería</option>
+                    <option>Cajón flamenco</option>
                     <option>Bajo</option>
                     <option>Piano</option>
                     <option>Voz</option>
@@ -109,10 +110,12 @@ class EditForm extends Component {
                     <option>Gaita</option>
                     <option>Violín</option>
                     <option>Clarinete</option>
+                    <option>Flauta travesera</option>
                     <option>Violonchelo</option>
                     <option>Contrabajo</option>
                     <option>Fagot</option>
                     <option>Ukelele</option>
+                    <option>Otros</option>
                   </Form.Control>
                 </Form.Group>
                 <Form.Group controlId="age">
