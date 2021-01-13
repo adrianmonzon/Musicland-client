@@ -22,7 +22,7 @@ class Home extends Component {
           </Carousel.Caption>
           </Container>
           <Carousel.Caption>
-            <h3>Echa un vistazo a la lista completa</h3>
+            <h3 className="home-h3">Echa un vistazo a la lista completa</h3>
             <Link to="/usuarios" className="btn btn-outline-light home-button">Ver lista</Link>
           </Carousel.Caption>
         </Carousel.Item>
@@ -37,7 +37,7 @@ class Home extends Component {
             alt="Third slide"
           />
           <Carousel.Caption>
-            <h3>Regístrate y comienza tu aventura musical</h3>
+            <h3 className="home-h3">Regístrate y comienza tu aventura musical</h3>
             <Link to="/registro" className="btn btn-outline-light home-button">Registro</Link>
           </Carousel.Caption>
         </Carousel.Item>
@@ -52,7 +52,7 @@ class Home extends Component {
             alt="Third slide"
           />
           <Carousel.Caption>
-            <h3>Inicia sesión y contacta con tus futuros compañeros</h3>
+            <h3 className="home-h3">Inicia sesión y contacta con tus futuros compañeros</h3>
             <Link to="/iniciar-sesion" className="btn btn-outline-light home-button">Iniciar sesión</Link>
           </Carousel.Caption>
         </Carousel.Item>
