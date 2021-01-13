@@ -1,5 +1,5 @@
 .home-img {
-   height: 100vh;
+   height: 86vh;
    object-fit: cover;
 }
 
@@ -20,14 +20,18 @@
 .home-title {
    width: 100%;
    font-size: 500%;
-   
 } 
 
 @media only screen and (max-width: 700px) {
    .home-title {
       font-size: 3rem;
+      margin-top: 10px;
    }
    .home-h3 {
       font-size: 1.5rem;
    }
+   .home-img {
+   height: 86vh;
+   object-fit: cover;
+}
 }
