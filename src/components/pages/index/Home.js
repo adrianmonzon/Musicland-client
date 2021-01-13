@@ -22,8 +22,8 @@ class Home extends Component {
           </Carousel.Caption>
           </Container>
           <Carousel.Caption>
-            <h3 className="home-h3">Echa un vistazo a la lista completa</h3>
-            <Link to="/usuarios" className="btn btn-outline-light home-button">Ver lista</Link>
+            {/* <h3 className="home-h3">Echa un vistazo a la lista completa</h3> */}
+            <Link to="/usuarios" className="btn btn-outline-light home-button">Ver músicos</Link>
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item interval={2500}>
@@ -37,8 +37,8 @@ class Home extends Component {
             alt="Third slide"
           />
           <Carousel.Caption>
-            <h3 className="home-h3">Regístrate y comienza tu aventura musical</h3>
-            <Link to="/registro" className="btn btn-outline-light home-button">Registro</Link>
+            {/* <h3 className="home-h3">Regístrate y comienza tu aventura musical</h3> */}
+            <Link to="/registro" className="btn btn-outline-light home-button">Regístrate</Link>
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item interval={3500}>
@@ -52,8 +52,8 @@ class Home extends Component {
             alt="Third slide"
           />
           <Carousel.Caption>
-            <h3 className="home-h3">Inicia sesión y contacta con tus futuros compañeros</h3>
-            <Link to="/iniciar-sesion" className="btn btn-outline-light home-button">Iniciar sesión</Link>
+            {/* <h3 className="home-h3">Inicia sesión y contacta con tus futuros compañeros</h3> */}
+            <Link to="/iniciar-sesion" className="btn btn-outline-light home-button">Inicia sesión</Link>
           </Carousel.Caption>
         </Carousel.Item>
       </Carousel>
