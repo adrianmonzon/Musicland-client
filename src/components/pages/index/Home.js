@@ -12,7 +12,7 @@ class Home extends Component {
         <Carousel.Item interval={2500}>
           <img
             className="d-block w-100 home-img"
-            src="https://images.pexels.com/photos/4670880/pexels-photo-4670880.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+            src="https://cdn.pixabay.com/photo/2015/03/26/09/55/musicians-690591_960_720.jpg"
             alt="First slide"
           />
           <Container>

@@ -31,7 +31,10 @@
       font-size: 1.5rem;
    }
    .home-img {
-   height: 86vh;
-   object-fit: cover;
-}
+      height: 86vh;
+      object-fit: cover;
+   }
+   .home-h5 {
+      font-size: 1rem;
+   }
 }
