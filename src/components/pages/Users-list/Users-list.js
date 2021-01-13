@@ -48,13 +48,15 @@ class UsersList extends Component {
               <Filter filterUsers={this.filterByInstrument} />
             </Col>
           </Row>
-          <Row>
-            {this.state.users ?
-              this.state.users.map((elm) => <UserCard key={elm._id} {...elm} loggedUser={this.props.loggedUser} />)
+          {
+            this.state.users 
+              ?
+              <Row>
+                {this.state.users.map((elm) => <UserCard key={elm._id} {...elm} loggedUser={this.props.loggedUser} />)}
+              </Row>
               :
               <Spinner animation="border" variant="light" />
-            }
-          </Row>
+          }
           <ListMap users={this.state.users} />
         </Container>
       </section>
