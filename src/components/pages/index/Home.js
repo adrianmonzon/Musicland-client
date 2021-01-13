@@ -12,13 +12,13 @@ class Home extends Component {
         <Carousel.Item interval={2500}>
           <img
             className="d-block w-100 home-img"
-            src="https://cdn.pixabay.com/photo/2015/03/26/09/55/musicians-690591_960_720.jpg"
+            src="https://images.unsplash.com/photo-1584402617825-1a58712ae0b0?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1042&q=80"
             alt="First slide"
           />
           <Container>
           <Carousel.Caption className="carousel-caption-a">
-            <h1 className="home-title">MU𝄞ICLAND</h1>
-            <h5 className="home-h5">Busca y encuentra músicos de tu alrededor</h5>
+            <h1 className="home-title first-title">MU𝄞ICLAND</h1>
+            <h5 className="home-h5 first-subtitle">Busca y encuentra músicos de tu alrededor</h5>
           </Carousel.Caption>
           </Container>
           <Carousel.Caption>
