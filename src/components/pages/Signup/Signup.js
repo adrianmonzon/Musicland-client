@@ -117,7 +117,7 @@ class Signup extends Component {
                   />
                 </Form.Group>
                 <Form.Group controlId="password">
-                  <Form.Label>Contraseña</Form.Label>
+                  <Form.Label>Contraseña</Form.Label> 
                   <Form.Control
                     type="password"
                     name="password"
@@ -125,6 +125,7 @@ class Signup extends Component {
                     onChange={this.handleInputChange}
                     required
                   />
+                  <small>Debe contener al menos 5 caracteres</small>
                 </Form.Group>
                 <Form.Group controlId="description">
                   <Form.Label>Descripción</Form.Label>
@@ -172,7 +173,7 @@ class Signup extends Component {
                   </Form.Control>
                 </Form.Group>
                 <Form.Group controlId="age">
-                  <Form.Label>Edad</Form.Label> <small>(Mínimo 16 años)</small>
+                  <Form.Label>Edad</Form.Label> 
                   <Form.Control
                     type="number"
                     name="age"
@@ -180,6 +181,7 @@ class Signup extends Component {
                     onChange={this.handleInputChange}
                     required
                   />
+                  <small>Mínimo 16 años</small>
                 </Form.Group>
                 <Form.Group>
                   <Form.Label> Ubicación</Form.Label>

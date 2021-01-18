@@ -57,7 +57,7 @@ class UsersList extends Component {
                 {this.state.users.map((elm) => <UserCard key={elm._id} {...elm} loggedUser={this.props.loggedUser} />)}
               </Row>
               :
-              <Row>{this.state.users.length === 0 && this.state.isServiceLoaded ? <p>No hay resultados para esta búsqueda</p> : <Spinner animation="border" variant="light" />
+              <Row>{this.state.users.length === 0 && this.state.isServiceLoaded ? <Col><p>No hay resultados para esta búsqueda</p></Col> : <Spinner animation="border" variant="light" />
               }
               </Row>
           }
