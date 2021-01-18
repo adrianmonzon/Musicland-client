@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import AuthService from "./../../../service/auth.service";
 import FilesService from "./../../../service/upload.service";
+import Alert from './../../shared/Alert/Alert'
 
 import "./Signup.css";
 
@@ -20,9 +21,11 @@ class Signup extends Component {
         age: "",
         image: "",
         email: "",
-        location: {type: "Point", coordinates: []}
+        location: { type: "Point", coordinates: [] }
       },
       uploadingActive: false,
+      showToast: false,
+      toastText: ''
     };
     this.authService = new AuthService();
     this.filesService = new FilesService();
@@ -40,10 +43,13 @@ class Signup extends Component {
       .signup(this.state.user)
       .then((theLoggedInUser) => {
         this.props.storeUser(theLoggedInUser.data);
+        // this.setState({ showToast: true, toastText: '¡Registro completado' })
         this.props.history.push("/usuarios");
       })
-      .catch((err) => console.log("Error", err));
+      .catch((err) => this.setState({ showToast: true, toastText: err.response.data.message }))
   };
+
+  handleToast = (visible, text) => this.setState({ showToast: visible, toastText: text })
 
   handleImageUpload = (e) => {
     const uploadData = new FormData();
@@ -65,8 +71,8 @@ class Signup extends Component {
   };
 
   setLocation = (newCoordinates) => {
-    const newLocation = {type: "Point", coordinates: newCoordinates}
-    this.setState({user: {...this.state.user, location: newLocation}})
+    const newLocation = { type: "Point", coordinates: newCoordinates }
+    this.setState({ user: { ...this.state.user, location: newLocation } })
   }
 
   render() {
@@ -76,7 +82,7 @@ class Signup extends Component {
           <Row>
             <Col md={{ span: 6, offset: 3 }}>
               <h1>Registro de usuario</h1>
-              <hr className="hr"/>
+              <hr className="hr" />
               <Form onSubmit={this.handleSubmit}>
                 <Form.Group controlId="username">
                   <Form.Label>Nombre de usuario</Form.Label>
@@ -86,6 +92,7 @@ class Signup extends Component {
                     name="username"
                     value={this.state.username}
                     onChange={this.handleInputChange}
+                    required
                   />
                 </Form.Group>
                 <Form.Group controlId="name">
@@ -96,6 +103,7 @@ class Signup extends Component {
                     name="name"
                     value={this.state.name}
                     onChange={this.handleInputChange}
+                    required
                   />
                 </Form.Group>
                 <Form.Group controlId="email">
@@ -105,6 +113,7 @@ class Signup extends Component {
                     name="email"
                     value={this.state.email}
                     onChange={this.handleInputChange}
+                    required
                   />
                 </Form.Group>
                 <Form.Group controlId="password">
@@ -114,6 +123,7 @@ class Signup extends Component {
                     name="password"
                     value={this.state.password}
                     onChange={this.handleInputChange}
+                    required
                   />
                 </Form.Group>
                 <Form.Group controlId="description">
@@ -125,17 +135,19 @@ class Signup extends Component {
                     name="description"
                     value={this.state.description}
                     onChange={this.handleInputChange}
+                    required
                   />
                 </Form.Group>
                 <Form.Group controlId="instrument">
                   <Form.Label>Instrumento</Form.Label>
                   <Form.Control
+                    required
                     as="select"
                     name="instrument"
                     value={this.state.instrument}
                     onChange={this.handleInputChange}
                   >
-                    <option>Seleccionar</option>
+                    <option value="">Seleccionar</option>
                     <option>Guitarra eléctrica</option>
                     <option>Guitarra española</option>
                     <option>Batería</option>
@@ -166,12 +178,12 @@ class Signup extends Component {
                     name="age"
                     value={this.state.age}
                     onChange={this.handleInputChange}
+                    required
                   />
                 </Form.Group>
                 <Form.Group>
-                  <Form.Label> Ubicación
-                  </Form.Label>
-                <LocationSearchInput setLocation={this.setLocation}/>
+                  <Form.Label> Ubicación</Form.Label>
+                  <LocationSearchInput setLocation={this.setLocation} />
                 </Form.Group>
                 <Form.Group>
                   <Form.Label>
@@ -184,6 +196,7 @@ class Signup extends Component {
             </Col>
           </Row>
         </Container>
+        <Alert show={this.state.showToast} handleToast={this.handleToast} toastText={this.state.toastText} />
       </section>
     );
   }

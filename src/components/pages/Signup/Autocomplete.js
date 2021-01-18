@@ -42,6 +42,7 @@ class LocationSearchInput extends React.Component {
                                 placeholder: 'Buscar ciudad...',
                                 className: 'location-search-input input-location',
                             })}
+                            required
                         />
                         <div className="autocomplete-dropdown-container">
                             {loading && <div>Loading...</div>}

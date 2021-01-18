@@ -11,7 +11,8 @@ class Login extends Component {
         super()
         this.state = {
             username: '',
-            password: ''
+            password: '',
+            credentialsError: ''
         }
         this.authService = new AuthService()
     }
@@ -27,36 +28,49 @@ class Login extends Component {
                 this.props.storeUser(theLoggedInUser.data)
                 this.props.history.push('/usuarios')        // redirección JS
             })
-            .catch(err => console.log({ err }))
+            .catch(err => this.setState({ credentialsError: err.response.data.message }))
     }
+
+    // credentialsError = () => {
+    //     if (this.state.username != ) {
+    //         alert('error')
+    //     }
+    // }
 
 
     render() {
 
         return (
-            
-            <section className="login">
-            <Container className="login-container">
 
-                <Row>
-                    <Col md={{ span: 6, offset: 3 }}>
-                        <h1>Iniciar sesión</h1>
-                        <hr className="login-hr"/>
-                        <Form onSubmit={this.handleSubmit}>
-                            <Form.Group className="w-50" controlId="username">
-                                <Form.Label>Nombre de usuario</Form.Label>
-                                <Form.Control type="text" name="username" value={this.state.username} onChange={this.handleInputChange} />
-                            </Form.Group>
-                            <Form.Group className="w-50" controlId="password">
-                                <Form.Label>Contraseña</Form.Label>
-                                <Form.Control type="password" name="password" value={this.state.password} onChange={this.handleInputChange} />
-                            </Form.Group>
-                            <Button className="loginButton" variant="light" type="submit">Iniciar sesión</Button>
-                        </Form>
+            <section className="login">
+                <Container className="login-container">
+
+                    <Row>
+                        <Col md={{ span: 6, offset: 3 }}>
+                            <h1>Iniciar sesión</h1>
+                            <hr className="login-hr" />
+                            <Form onSubmit={this.handleSubmit}>
+                                <Form.Group className="w-50" controlId="username">
+                                    <Form.Label>Nombre de usuario</Form.Label>
+                                    <Form.Control type="text" name="username" value={this.state.username} onChange={this.handleInputChange} />
+                                </Form.Group>
+                                <Form.Group className="w-50" controlId="password">
+                                    <Form.Label>Contraseña</Form.Label>
+                                    <Form.Control type="password" name="password" value={this.state.password} onChange={this.handleInputChange} />
+                                </Form.Group>
+                                {
+                                    this.state.credentialsError
+                                        ?
+                                        <div className='error-message'>{this.state.credentialsError}</div>
+                                        :
+                                        null
+                                }
+                                <Button className="loginButton" variant="light" type="submit">Iniciar sesión</Button>
+                            </Form>
                             <small>¿No registrad@? Hazlo <Link to="/registro" className="loginLink">aquí</Link></small>
-                    </Col>
-                </Row>
-            </Container>
+                        </Col>
+                    </Row>
+                </Container>
             </section>
         )
     }

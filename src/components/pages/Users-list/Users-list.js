@@ -14,6 +14,7 @@ class UsersList extends Component {
     super();
     this.state = {
       users: [],
+      isServiceLoaded: false,
     };
     this.usersService = new UsersService();
   }
@@ -35,7 +36,7 @@ class UsersList extends Component {
     else {
       this.usersService
         .filterByInstrument(instrument)
-        .then((res) => this.setState({ users: res.data }))
+        .then((res) => this.setState({ users: res.data, isServiceLoaded: true }))
         .catch((err) => console.log(err))
     }
   };
@@ -56,7 +57,9 @@ class UsersList extends Component {
                 {this.state.users.map((elm) => <UserCard key={elm._id} {...elm} loggedUser={this.props.loggedUser} />)}
               </Row>
               :
-              <Spinner animation="border" variant="light" />
+              <Row>{this.state.users.length === 0 && this.state.isServiceLoaded ? <p>No hay resultados para esta búsqueda</p> : <Spinner animation="border" variant="light" />
+              }
+              </Row>
           }
           <ListMap users={this.state.users} />
         </Container>
