@@ -18,18 +18,21 @@ class ContactForm extends Component {
     this.mailService = new MailService()
   }
 
-  
+
   handleSubmit = e => {
     e.preventDefault()
     this.mailService.sendMail(this.state)
-    .then((response) => {
-      if (response.data.status === 'success') {
-              alert("Message Sent.");
-              this.resetForm()
-            } else if (response.data.status === 'fail') {
-              alert("Message failed to send.")
-            }
-    })
+    // .then(alert('Mensaje enviado'))
+    //   .then((response) => {
+    //     if (response.data.status === 'success') {
+    //       alert("Message Sent.");
+    //       this.resetForm()
+    //     } else if (response.data.status === 'fail') {
+    //       alert("Message failed to send.")
+    //     }
+    //   })
+      .catch(err => console.log(err))
+
   }
 
   resetForm() {
@@ -62,18 +65,18 @@ class ContactForm extends Component {
           <Form.Row>
             <Form.Group as={Col} controlId="formGridName">
               <Form.Label>De</Form.Label>
-              <Form.Control type="text" placeholder="Enter name" name="name" readOnly value={this.state.name}/>
+              <Form.Control type="text" placeholder="Enter name" name="name" readOnly value={this.state.name} />
             </Form.Group>
 
             <Form.Group as={Col} controlId="formGridEmail">
               <Form.Label>Para</Form.Label>
-              <Form.Control type="text" placeholder="Enter email" name="contactEmail" readOnly value={this.state.contactEmail}/>
+              <Form.Control type="text" placeholder="Enter email" name="contactEmail" readOnly value={this.state.contactEmail} />
             </Form.Group>
           </Form.Row>
 
           <Form.Group controlId="formGridSubject">
             <Form.Label>Asunto</Form.Label>
-            <Form.Control type="text" name="subject" value={this.state.subject}  onChange={this.handleInputChange} />
+            <Form.Control type="text" name="subject" value={this.state.subject} onChange={this.handleInputChange} />
           </Form.Group>
 
           <Form.Group controlId="formGridAddress2">
