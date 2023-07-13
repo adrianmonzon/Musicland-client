@@ -16,20 +16,26 @@ class Home extends Component {
             alt="First slide"
           />
           <Container>
-          <Carousel.Caption className="carousel-caption-a">
-            <h1 className="home-title first-title">MU𝄞ICLAND</h1>
-            <h5 className="home-h5 first-subtitle">Busca y encuentra músicos de tu alrededor</h5>
-          </Carousel.Caption>
+            <Carousel.Caption className="carousel-caption-a">
+              <h1 className="home-title first-title">ENCUENTRA UN MÚSICO</h1>
+              <h5 className="home-h5 first-subtitle">
+                Busca y encuentra músicos de tu alrededor
+              </h5>
+            </Carousel.Caption>
           </Container>
           <Carousel.Caption>
             {/* <h3 className="home-h3">Echa un vistazo a la lista completa</h3> */}
-            <Link to="/usuarios" className="btn btn-outline-light home-button">Ver músicos</Link>
+            <Link to="/usuarios" className="btn btn-outline-light home-button">
+              Ver músicos
+            </Link>
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item interval={2500}>
           <Carousel.Caption className="carousel-caption-a">
-            <h1 className="home-title">MU𝄞ICLAND</h1>
-            <h5 className="home-h5">Busca y encuentra músicos de tu alrededor</h5>
+            <h1 className="home-title">ENCUENTRA UN MÚSICO</h1>
+            <h5 className="home-h5">
+              Busca y encuentra músicos de tu alrededor
+            </h5>
           </Carousel.Caption>
           <img
             className="d-block w-100 home-img"
@@ -38,13 +44,17 @@ class Home extends Component {
           />
           <Carousel.Caption>
             {/* <h3 className="home-h3">Regístrate y comienza tu aventura musical</h3> */}
-            <Link to="/registro" className="btn btn-outline-light home-button">Regístrate</Link>
+            <Link to="/registro" className="btn btn-outline-light home-button">
+              Regístrate
+            </Link>
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item interval={3500}>
           <Carousel.Caption className="carousel-caption-a">
-            <h1 className="home-title">MU𝄞ICLAND</h1>
-            <h5 className="home-h5">Busca y encuentra músicos de tu alrededor</h5>
+            <h1 className="home-title">ENCUENTRA UN MÚSICO</h1>
+            <h5 className="home-h5">
+              Busca y encuentra músicos de tu alrededor
+            </h5>
           </Carousel.Caption>
           <img
             className="d-block w-100 home-img"
@@ -53,11 +63,16 @@ class Home extends Component {
           />
           <Carousel.Caption>
             {/* <h3 className="home-h3">Inicia sesión y contacta con tus futuros compañeros</h3> */}
-            <Link to="/iniciar-sesion" className="btn btn-outline-light home-button">Inicia sesión</Link>
+            <Link
+              to="/iniciar-sesion"
+              className="btn btn-outline-light home-button"
+            >
+              Inicia sesión
+            </Link>
           </Carousel.Caption>
         </Carousel.Item>
       </Carousel>
-    )
+    );
   }
 }
 
