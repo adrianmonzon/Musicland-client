@@ -8,7 +8,6 @@ export default class MailService {
             withCredentials: true
         })
     }
-
     
     sendMail = mailInfo => this.apiHandler.post(`/mail/send-email`, mailInfo)
 }
